@@ -1,101 +1,88 @@
+import { Button } from "@/components/ui/button";
+import Typography from "@/components/ui/typography";
 import Image from "next/image";
+import Feature from "./feature";
+import { ArrowUpDown, Timer, Workflow } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div
+      className="flex flex-col h-full md:py-36 md:px-32 pt-11 pb-24 px-8
+        w-full items-center text-center gap-12"
+    >
+      <div className="flex flex-col gap-6 items-center">
+        <Typography className="max-w-2xl" variant="h1">
+          Information you need during on-call emergencies
+        </Typography>
+        <Typography className="max-w-2xl" variant="h5">
+          Quickly link new on-call tickets to similar past incidents and their
+          solutions. All directly in Slack the moment an incident happens.
+        </Typography>
+        <Link
+          href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
+          target="_blank"
+        >
+          <Button>Get Started</Button>
+        </Link>
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          width={1024}
+          height={632}
+          alt="Pandem.dev hero image"
+          src="/hero1.png"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      </div>
+      <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
+        <div className="flex flex-col gap-12 items-center">
+          <Typography className="max-w-2xl" variant="h1">
+            Quick solutions, less stress
+          </Typography>
+          <div className="flex md:flex-row flex-col gap-12">
+            <Feature
+              icon={<Timer size={24} />}
+              headline="Fix emergencies fast"
+              description="Save 20-30 minutes per on-call ticket - no more searching for relevant issues and runbooks"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Feature
+              icon={<ArrowUpDown size={24} />}
+              headline="Universally compatible"
+              description="Works with PagerDuty, Jira, or custom Slack alerts—Pandem integrates with any system"
+            />
+            <Feature
+              icon={<Workflow size={24} />}
+              headline="Secure for your org"
+              description="We keep your data safe by taking top security measures."
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="flex flex-col gap-6 max-w-2xl items-center">
+          <Typography className="max-w-2xl" variant="h1">
+            Instant setup, no custom code
+          </Typography>
+          <Typography className="max-w-2xl" variant="p">
+            Quickly link new on-call tickets to similar past incidents and their
+            solutions. All directly in Slack the moment an incident happens.
+          </Typography>
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            width={1024}
+            height={632}
+            alt="Pandem.dev hero image"
+            src="/hero1.png"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+        <div className="flex flex-col gap-6 items-center">
+          <Typography className="max-w-2xl" variant="h1">
+            Get in touch
+          </Typography>
+          <div>Book a demo, or hop on a call</div>
+          <Link
+            href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
+            target="_blank"
+          >
+            <Button>Book now</Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
